@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+*.log
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.gguf
+experts/
+router-work/

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fleet-v012"
+version = "0.12.0"
+description = "Turn-routed semantic expert tooling for Fleet v0.12"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Fleet contributors"}]
+dependencies = [
+  "torch>=2.2",
+  "transformers>=4.45",
+  "safetensors>=0.4.5",
+]
+
+[project.optional-dependencies]
+hub = ["huggingface_hub>=0.25"]
+peft = ["peft>=0.13"]
+triton = ["triton>=3.0"]
+all = ["huggingface_hub>=0.25", "peft>=0.13", "triton>=3.0"]
+
+[project.scripts]
+fleet = "fleet_v012.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
